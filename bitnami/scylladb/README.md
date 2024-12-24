@@ -36,6 +36,12 @@ Deploying Bitnami applications as Helm Charts is the easiest way to get started 
 
 Bitnami containers can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm Charts in clusters.
 
+## Only latest stable branch maintained in the free Bitnami catalog
+
+Starting December 10th 2024, only the latest stable branch of any container will receive updates in the free Bitnami catalog. To access up-to-date releases for all upstream-supported branches, consider upgrading to Bitnami Premium. Previous versions already released will not be deleted. They are still available to pull from DockerHub.
+
+Please check the Bitnami Premium page in our partner [Arrow Electronics](https://www.arrow.com/globalecs/na/vendors/bitnami?utm_source=GitHub&utm_medium=containers) for more information.
+
 ## Supported tags and respective `Dockerfile` links
 
 Learn more about the Bitnami tagging policy and the difference between rolling tags and immutable tags [in our documentation page](https://docs.bitnami.com/tutorials/understand-rolling-tags-containers/).
@@ -166,7 +172,6 @@ docker-compose up -d
 
 | Name                                              | Description                                                                             | Default Value                         |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------|---------------------------------------|
-| `SCYLLADB_MOUNTED_CONF_DIR`                       | ScyllaDB directory for mounted configuration files                                      | `${DB_VOLUME_DIR}/conf`               |
 | `SCYLLADB_CLIENT_ENCRYPTION`                      | Enable client encryption                                                                | `false`                               |
 | `SCYLLADB_CLUSTER_NAME`                           | ScyllaDB cluster name                                                                   | `My Cluster`                          |
 | `SCYLLADB_DATACENTER`                             | ScyllaDB datacenter name                                                                | `dc1`                                 |
@@ -213,6 +218,7 @@ docker-compose up -d
 | `SCYLLADB_SSL_CA_FILE`                            | ScyllaDB SSL CA location                                                                | `nil`                                 |
 | `SCYLLADB_SSL_VALIDATE`                           | Perform SSL validation on the certificates                                              | `false`                               |
 | `SSL_VERSION`                                     | TLS version to use when connecting.                                                     | `TLSv1_2`                             |
+| `SCYLLADB_MOUNTED_CONF_DIR`                       | ScyllaDB directory for mounted configuration files                                      | `${DB_VOLUME_DIR}/etc`                |
 | `SCYLLADB_CQL_SHARD_PORT_NUMBER`                  | CQL (shard aware) port                                                                  | `19042`                               |
 | `SCYLLADB_API_PORT_NUMBER`                        | REST API port                                                                           | `10000`                               |
 | `SCYLLADB_PROMETHEUS_PORT_NUMBER`                 | Prometheus metrics port                                                                 | `9180`                                |
