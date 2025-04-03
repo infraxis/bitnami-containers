@@ -117,6 +117,7 @@ We can launch another containers using the same flag (`--network NETWORK`) in th
 | `GF_INSTALL_PLUGINS`          | Grafana plugins to install                                                           | `nil`                                   |
 | `GF_INSTALL_PLUGINS_SKIP_TLS` | Whether to skip TLS certificate verification when installing plugins                 | `yes`                                   |
 | `GF_FEATURE_TOGGLES`          | Comma-separated list of Grafana feature toggles.                                     | `nil`                                   |
+| `GF_SECURITY_ADMIN_PASSWORD`  | Grafana admin password.                                                              | `nil`                                   |
 | `GRAFANA_MIGRATION_LOCK`      | Enable the migration lock mechanism to avoid issues caused by concurrent migrations. | `false`                                 |
 | `GRAFANA_SLEEP_TIME`          | Sleep time between migration status check attempts.                                  | `10`                                    |
 | `GRAFANA_RETRY_ATTEMPTS`      | Number of retries to check migration status.                                         | `12`                                    |
@@ -319,7 +320,7 @@ If you encountered a problem running this container, you can file an [issue](htt
 
 ## License
 
-Copyright &copy; 2024 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+Copyright &copy; 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

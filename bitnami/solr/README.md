@@ -171,6 +171,8 @@ docker-compose up -d
 | `SOLR_CORE_CONF_DIR`            | Solar CORE configuration directory                                            | `${SOLR_SERVER_DIR}/solr/configsets/_default/conf` |
 | `SOLR_SSL_ENABLED`              | Indicates if Solr starts with SSL enabled                                     | `no`                                               |
 | `SOLR_SSL_CHECK_PEER_NAME`      | Indicates if Solr should check the peer names                                 | `false`                                            |
+| `SOLR_SSL_KEY_STORE_PASSWORD`   | Password for the Solr SSL keystore                                            | `nil`                                              |
+| `SOLR_SSL_TRUST_STORE_PASSWORD` | Password for the Solr SSL truststore                                          | `nil`                                              |
 | `SOLR_ZK_MAX_RETRIES`           | Maximum retries when waiting for zookeeper configuration operations to finish | `5`                                                |
 | `SOLR_ZK_SLEEP_TIME`            | Sleep time when waiting for zookeeper configuration operations to finish      | `5`                                                |
 | `SOLR_ZK_CHROOT`                | ZooKeeper ZNode chroot where to store solr data. Default: /solr               | `/solr`                                            |
@@ -178,21 +180,22 @@ docker-compose up -d
 
 #### Read-only environment variables
 
-| Name                   | Description                            | Value                                          |
-|------------------------|----------------------------------------|------------------------------------------------|
-| `BITNAMI_VOLUME_DIR`   | Directory where to mount volumes.      | `/bitnami`                                     |
-| `SOLR_BASE_DIR`        | Solr installation directory.           | `${BITNAMI_ROOT_DIR}/solr`                     |
-| `SOLR_JAVA_HOME`       | JAVA installation directory.           | `${BITNAMI_ROOT_DIR}/java`                     |
-| `SOLR_BIN_DIR`         | Solr directory for binary executables. | `${SOLR_BASE_DIR}/bin`                         |
-| `SOLR_TMP_DIR`         | Solr directory for temp files.         | `${SOLR_BASE_DIR}/tmp`                         |
-| `SOLR_PID_DIR`         | Solr directory for PID files.          | `${SOLR_BASE_DIR}/tmp`                         |
-| `SOLR_LOGS_DIR`        | Solr directory for logs files.         | `${SOLR_BASE_DIR}/logs`                        |
-| `SOLR_SERVER_DIR`      | Solr directory for server files.       | `${SOLR_BASE_DIR}/server`                      |
-| `SOLR_VOLUME_DIR`      | Solr persistence directory.            | `${BITNAMI_VOLUME_DIR}/solr`                   |
-| `SOLR_DATA_TO_PERSIST` | Solr data to persist.                  | `server/solr`                                  |
-| `SOLR_PID_FILE`        | Solr PID file                          | `${SOLR_PID_DIR}/solr-${SOLR_PORT_NUMBER}.pid` |
-| `SOLR_DAEMON_USER`     | Solr system user                       | `solr`                                         |
-| `SOLR_DAEMON_GROUP`    | Solr system group                      | `solr`                                         |
+| Name                         | Description                            | Value                                          |
+|------------------------------|----------------------------------------|------------------------------------------------|
+| `BITNAMI_VOLUME_DIR`         | Directory where to mount volumes.      | `/bitnami`                                     |
+| `SOLR_BASE_DIR`              | Solr installation directory.           | `${BITNAMI_ROOT_DIR}/solr`                     |
+| `SOLR_JAVA_HOME`             | JAVA installation directory.           | `${BITNAMI_ROOT_DIR}/java`                     |
+| `SOLR_BIN_DIR`               | Solr directory for binary executables. | `${SOLR_BASE_DIR}/bin`                         |
+| `SOLR_TMP_DIR`               | Solr directory for temp files.         | `${SOLR_BASE_DIR}/tmp`                         |
+| `SOLR_PID_DIR`               | Solr directory for PID files.          | `${SOLR_BASE_DIR}/tmp`                         |
+| `SOLR_LOGS_DIR`              | Solr directory for logs files.         | `${SOLR_BASE_DIR}/logs`                        |
+| `SOLR_SERVER_DIR`            | Solr directory for server files.       | `${SOLR_BASE_DIR}/server`                      |
+| `SOLR_VOLUME_DIR`            | Solr persistence directory.            | `${BITNAMI_VOLUME_DIR}/solr`                   |
+| `SOLR_DATA_TO_PERSIST`       | Solr data to persist.                  | `server/solr`                                  |
+| `SOLR_PID_FILE`              | Solr PID file                          | `${SOLR_PID_DIR}/solr-${SOLR_PORT_NUMBER}.pid` |
+| `SOLR_DAEMON_USER`           | Solr system user                       | `solr`                                         |
+| `SOLR_DAEMON_GROUP`          | Solr system group                      | `solr`                                         |
+| `SOLR_ZK_CONNECTION_TIMEOUT` | ZooKeeper connection attempt timeout.  | `10`                                           |
 
 When you start the solr image, you can adjust the configuration of the instance by passing one or more environment variables either on the docker-compose file or on the `docker run` command line.
 
@@ -349,7 +352,7 @@ If you encountered a problem running this container, you can file an [issue](htt
 
 ## License
 
-Copyright &copy; 2024 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+Copyright &copy; 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

@@ -11,7 +11,7 @@
 This container is part of the [Harbor solution](https://github.com/bitnami/charts/tree/main/bitnami/harbor) that is primarily intended to be deployed in Kubernetes.
 
 ```console
-docker run --name harbor bitnami/harbor:latest
+docker run --name harbor bitnami/harbor-portal:latest
 ```
 
 ## Why use Bitnami Images?
@@ -51,7 +51,7 @@ Subscribe to project updates by watching the [bitnami/containers GitHub repo](ht
 
 ## Configuration
 
-Harbor Portal is a component of the Harbor application. In order to get the Harbor application running on Kubernetes we encourage you to check the [bitnami/harbor Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/harbor) and configure it using the options exposed in the values.yaml file.
+Harbor Portal is a component of the Harbor application. In order to get the Harbor application running on Kubernetes we encourage you to check the [Bitnami Harbor Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/harbor) and configure it using the options exposed in the values.yaml file.
 
 For further information about the specific component itself, please refer to the [source repository documentation](https://github.com/goharbor/harbor/tree/main/docs).
 

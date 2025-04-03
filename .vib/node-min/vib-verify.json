@@ -3,7 +3,8 @@
     "resources": {
       "url": "{SHA_ARCHIVE}",
       "path": "{VIB_ENV_PATH}"
-    }
+    },
+    "runtime_parameters": "Y29tbWFuZDogWyJub2RlIiwgIi0tZXZhbCIsICJzZXRUaW1lb3V0KCgpID0+IHt9LCAzNjAwICogMTAwMCk7Il0K"
   },
   "phases": {
     "package": {
@@ -20,6 +21,12 @@
             "architectures": [
               "linux/amd64",
               "linux/arm64"
+            ],
+            "size_thresholds": [
+              {
+                "size": "50MB",
+                "kind": "COMPRESSED"
+              }
             ]
           }
         },
@@ -33,6 +40,21 @@
     },
     "verify": {
       "actions": [
+        {
+          "action_id": "goss",
+          "params": {
+            "resources": {
+              "path": "/.vib"
+            },
+            "tests_file": "node-min/goss/goss.yaml",
+            "vars_file": "node-min/goss/vars.yaml",
+            "remote": {
+              "pod": {
+                "workload": "deploy-node-min"
+              }
+            }
+          }
+        },
         {
           "action_id": "trivy",
           "params": {

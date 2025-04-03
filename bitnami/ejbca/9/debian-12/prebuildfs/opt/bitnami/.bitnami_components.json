@@ -3,24 +3,24 @@
         "arch": "amd64",
         "distro": "debian-12",
         "type": "NAMI",
-        "version": "9.0.0-1"
+        "version": "9.1.1-0"
     },
-    "java": {
+    "jre": {
         "arch": "amd64",
         "distro": "debian-12",
         "type": "NAMI",
-        "version": "17.0.13-12-1"
+        "version": "21.0.6-10-1"
     },
     "mysql-client": {
         "arch": "amd64",
         "distro": "debian-12",
         "type": "NAMI",
-        "version": "10.11.10-0"
+        "version": "10.11.11-2"
     },
     "wildfly": {
         "arch": "amd64",
         "distro": "debian-12",
         "type": "NAMI",
-        "version": "32.0.1-4"
+        "version": "32.0.1-9"
     }
 }

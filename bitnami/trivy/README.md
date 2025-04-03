@@ -78,6 +78,10 @@ Check the [official Trivy documentation](https://github.com/aquasecurity/trivy#u
 
 ## Notable Changes
 
+### 0.60.0-debian-12-r2
+
+* This image revision dramatically reduces the image given it removes the existing OS distro. Instead, it simply includes the NATS binary on top of a scratch base image.
+
 ### Starting January 16, 2024
 
 * The `docker-compose.yaml` file has been removed, as it was solely intended for internal testing purposes.
@@ -92,7 +96,7 @@ If you encountered a problem running this container, you can file an [issue](htt
 
 ## License
 
-Copyright &copy; 2024 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+Copyright &copy; 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

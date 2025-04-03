@@ -97,6 +97,7 @@ docker build -t bitnami/APP:latest .
 | `SCHEMA_REGISTRY_DEFAULT_CONF_DIR`      | SCHEMA REGISTRY configuration directory.                                                  | `${SCHEMA_REGISTRY_BASE_DIR}/etc.default`                                |
 | `SCHEMA_REGISTRY_LOGS_DIR`              | SCHEMA REGISTRY logs directory.                                                           | `${SCHEMA_REGISTRY_BASE_DIR}/logs`                                       |
 | `SCHEMA_REGISTRY_CONF_FILE`             | Main SCHEMA REGISTRY configuration file.                                                  | `${SCHEMA_REGISTRY_CONF_DIR}/schema-registry/schema-registry.properties` |
+| `SCHEMA_REGISTRY_CONNECTION_TIMEOUT`    | SCHEMA REGISTRY connection attempt timeout.                                               | `10`                                                                     |
 | `SCHEMA_REGISTRY_DAEMON_USER`           | Users that will execute the SCHEMA REGISTRY Server process.                               | `schema-registry`                                                        |
 | `SCHEMA_REGISTRY_DAEMON_GROUP`          | Group that will execute the SCHEMA REGISTRY Server process.                               | `schema-registry`                                                        |
 | `SCHEMA_REGISTRY_DEFAULT_LISTENERS`     | Comma-separated list of listeners that listen for API requests over either HTTP or HTTPS. | `http://0.0.0.0:8081`                                                    |
@@ -177,7 +178,7 @@ If you encountered a problem running this container, you can file an [issue](htt
 
 ## License
 
-Copyright &copy; 2024 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+Copyright &copy; 2025 Broadcom. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
